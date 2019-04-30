@@ -13,6 +13,8 @@ import org.junit.Test
  *
  *
  */
+
+
 class LottoTest {
     @Test
     fun `1~45 번호 랜덤하게 생성하기`() {
