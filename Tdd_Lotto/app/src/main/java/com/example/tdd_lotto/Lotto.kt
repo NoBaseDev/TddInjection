@@ -4,11 +4,17 @@ import kotlin.random.Random
 
 class Lotto {
 
-    fun getNumber(): Int = Random.nextInt(1, 46)
+    companion object {
+        val minNum = 1
+        val maxNum = 45
+        val numCnt = 6
+    }
+
+    fun getNumber(): Int = Random.nextInt(minNum, maxNum + 1)
 
     fun getAllNumber(): MutableList<Int> {
         var numbers = mutableListOf<Int>()
-        while(numbers.size < 6) {
+        while(numbers.size < numCnt) {
             numbers.add(getNumber())
         }
         return numbers
@@ -16,14 +22,13 @@ class Lotto {
 
     fun getUniqueAllNumber(): MutableList<Int> {
         var numbers = mutableListOf<Int>()
-        while(numbers.size < 6) {
+        while(numbers.size < numCnt) {
             val number = getNumber()
             if(!numbers.contains(number)) {
                 numbers.add(number)
             }
         }
         return numbers
-
     }
 
 }
