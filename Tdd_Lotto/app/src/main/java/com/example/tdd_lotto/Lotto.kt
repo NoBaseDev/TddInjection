@@ -31,4 +31,20 @@ class Lotto {
         return numbers
     }
 
+    fun isRange(number: Int): Boolean {
+        if(number in minNum..maxNum) {
+            return true
+        }
+        return false
+    }
+
+    fun isUnique(numbers: MutableList<Int>): Boolean {
+        for (i in numbers) {
+            if(numbers.count { it == i } != 1) {
+                return false
+            }
+        }
+        return true
+    }
+
 }

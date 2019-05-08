@@ -21,8 +21,7 @@ class LottoTest {
         testRepeat(100) {
             val number = lotto.getNumber()
             println(number)
-            assertTrue(number > 0)
-            assertTrue(number < 46)
+            assertTrue(lotto.isRange(number))
         }
     }
 
@@ -42,9 +41,7 @@ class LottoTest {
         testRepeat(100) {
             val numbers = lotto.getUniqueAllNumber()
             println("numbers : $numbers, count : ${numbers.size}")
-            for (i in numbers) {
-                assertEquals(1, numbers.count { it == i })
-            }
+            assertTrue(lotto.isUnique(numbers))
         }
     }
 
